@@ -1,16 +1,16 @@
-# API Testing Project with Cucumber, Java, RestAssured, and JUnit
+# TM Sandbox API Testing Project with Cucumber, Java, RestAssured, and JUnit
 
-This is a TM Sandbox API testing project that leverages Behavior-Driven Development (BDD) principles using Cucumber, Java, RestAssured, and JUnit. It allows you to create and execute automated tests for RESTful APIs while generating comprehensive Cucumber reports for test results.
+This is a TM Sandbox API testing project that leverages Behaviour-Driven Development (BDD) principles using Cucumber, Java, RestAssured, and JUnit. It allows you to create and execute automated tests for RESTful APIs while generating comprehensive Cucumber reports for test results.
 
 ## Project Overview
 
-This project covers a test case that tests the Category endpoint and validates various aspects of the HTTP respose from a GET request call. The project also helps illistrate how to set up a Maven-based Java project for API testing. It combines the following technologies and tools:
+This project covers a test case that tests the Category endpoint and validates various aspects of the HTTP response from a GET request call. The project also helps illustrate how to set up a Maven-based Java project for API testing. It combines the following technologies and tools:
 
 - **Cucumber:** A BDD framework that enables you to write human-readable scenarios in Gherkin syntax.
 - **Java:** The programming language used for implementing step definitions and test logic.
 - **RestAssured:** A popular Java library for simplifying API testing.
 - **JUnit:** A testing framework for running and managing test cases.
-- **Cucumber BDD Framework:** Used for writing test cases in English-like statements in Gherkin langauge and enables to pass input data as the expected data from the feature files. Cucumber also generates detailed HTML reports for test results, making it easy to analyze and share test outcomes.
+- **Cucumber BDD Framework:** Used for writing test cases in English-like statements in Gherkin language and enables to passing of input data as the expected data from the feature files. Cucumber also generates detailed HTML reports for test results, making it easy to analyse and share test outcomes.
 
 ## Project Structure
 
@@ -19,19 +19,19 @@ The project structure is organized as follows:
 ```
 TMSandbox-API/
 ├── src/
-│   ├── main/
-│   │   └── java
-│   │       └── ... (framework code)
-│   ├── test/
-│   │   ├── java/nz.co.gps/
-│   │   │   ├── features/
-│   │   │   │   └── ... (Cucumber feature files)
-│   │   │   ├── steps/
-│   │   │   │   └── ... (Cucumber step definitions)
-│   │   │   └── runners/
-│   │   │       └── TestRunner.java (Cucumber test runner)
-│   │   └── resources/
-│   │       └── ... (Config files)
+│   ├── main/
+│   │   └── java
+│   │       └── ... (framework code)
+│   ├── test/
+│   │   ├── java/nz.co.gps/
+│   │   │   ├── features/
+│   │   │   │   └── ... (Cucumber feature files)
+│   │   │   ├── steps/
+│   │   │   │   └── ... (Cucumber step definitions)
+│   │   │   └── runners/
+│   │   │       └── TestRunner.java (Cucumber test runner)
+│   │   └── resources/
+│   │       └── ... (Config files)
 ├── pom.xml (Maven project configuration)
 └── README.md (This file)
 ```
@@ -51,12 +51,11 @@ To set up and run this project, follow these steps:
 
 1. Clone this repository to your local machine:
 
-   ```bash
-   git clone https://github.com/gurpreet.s.kairon/TMSandbox-API.git
-   ```
+```bash
+   git clone https://github.com/gurpreetskairon/TMSandbox-API.git
+```
 
 2. Open the project in your preferred IDE. I have used IntelliJ Idea.
-
 3. Build the project and resolve dependencies using Maven.
 
 ## Running Tests
@@ -73,7 +72,7 @@ mvn test
 
 ![Terminal](Terminal.png)
 
-The tests are by default run on the 'sandbox' environment. In case you have the API links to the 'test' or 'prod' evironments, then edit the URL in the "global.properties" file located in `src/test/java/resources' directory, and pass the environment value in the Maven command using the "-Denv" option.
+The tests are by default run on the 'sandbox' environment. In case you have the API links to the 'test' or 'prod' environments, then edit the URL in the "global.properties" file located in `src/test/java/resources' directory, and pass the environment value in the Maven command using the "-Denv" option.
 
 ```bash
 mvn test -Denv=prod
@@ -83,12 +82,12 @@ In order to Maven run a test using a tag, you could use the "-Dcucumber.filter.t
 
 ```bash
 mvn test -Dcucumber.filter.tags="@acceptance"
-
+ 
 ```
 
 ## Generating Cucumber Reports
 
-This project includes Cucumber Reporting, which generates HTML reports for your test results. After running the tests, you can find the generated reports in the `target/cucumber-reports` directory. Open the `cucumber.html` file in a web browser to view the test execution report. Here is a the report that was generated on runing the acceptance test.
+This project includes Cucumber Reporting, which generates HTML reports for your test results. After running the tests, you can find the generated reports in the `target/cucumber-reports` directory. Open the `cucumber.html` file in a web browser to view the test execution report. Here is a report that was generated on running the acceptance test.
 
 ![Cucumber Report](CucumberReport.png)
 

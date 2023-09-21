@@ -1,5 +1,6 @@
 package nz.co.gps.steps;
 
+
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.*;
 import io.restassured.RestAssured;
@@ -8,8 +9,8 @@ import io.restassured.http.ContentType;
 import org.junit.Assert;
 import java.util.Map;
 import static nz.co.gps.steps.Hooks.*;
-
 import static io.restassured.RestAssured.given;
+
 
 public class CategoriesSteps {
 
@@ -39,10 +40,10 @@ public class CategoriesSteps {
     public void validateResponseData(DataTable dataTable) {
         Map<String, String> expectedResponseData = dataTable.asMap(String.class, String.class);
 
-        // validate the attribute value of all those passed from the feature file
+        // validate the attribute value of all attributes passed from the feature file
         for (String attribute : expectedResponseData.keySet()) {
-            Assert.assertEquals(expectedResponseData.get(attribute), response
-                    .jsonPath().getString(attribute));
+            Assert.assertEquals(expectedResponseData.get(attribute),
+                    response.jsonPath().getString(attribute));
         }
     }
 
@@ -54,7 +55,7 @@ public class CategoriesSteps {
                                      String expectedSiblingValue) {
         Assert.assertTrue(
                 response.jsonPath()
-                        // filter elements that match a attribute value
+                        // filter elements that match an attribute value
                         // get the value of a sibling attribute that match the above filter criteria
                         .getList(String.format("%s.findAll{it.%s == '%s'}.%s",
                                 element, attribute, attributeValue, sibling))
